@@ -4,7 +4,7 @@ LD=ld
 CFLAGS=-f macho64 -g
 LDFLAGS=-no_pie -macosx_version_min 13.0 -L/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib -lSystem -lSDL2 -lSDL2_image 
 
-SOURCES=$(wildcard src/**/*.asm src/*.asm)
+SOURCES=$(wildcard gen/**/*.asm gen/*.asm)
 OBJECTS=$(patsubst %.asm,%.o,$(SOURCES))
 
 all: main clean

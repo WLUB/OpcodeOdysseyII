@@ -1,5 +1,10 @@
 import struct
 
+"""
+A utility for inspecting register value.
+Author: Lukas Bergström
+"""
+
 def interpret_xmm(value):
     hex_values = value.strip("{}").split()
     

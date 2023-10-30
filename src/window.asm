@@ -24,21 +24,21 @@ section .data
 
 section .text
 
-; Return 0 on success
+;; Return 0 on success
 _window_init_sdl:
     ; Initialize the SDL library
     mov rdi, SDL_INIT_VIDEO 
     call _SDL_Init      ; Return 0 on success
     ret
 
-; Return 1 on success
+;; Return 1 on success
 _window_create_renderer:
     mov esi, -1
     mov edx, SDL_RENDERER_PRESENTVSYNC
     call _SDL_CreateRenderer
     ret
 
-; Return 1 on success
+;; Return 1 on success
 _window_create_texture:
 
     mov esi, SDL_PIXELFORMAT_ABGR8888
@@ -48,7 +48,7 @@ _window_create_texture:
     call _SDL_CreateTexture
     ret
 
-; Return 1 on success
+;; Return 1 on success
 _window_create:
 
     ; Create a window
@@ -63,10 +63,10 @@ _window_create:
     ret
 
 
-; Parameters:
-; rdi - pixels
-; rsi - texture
-; rdx - renderer
+;; Parameters:
+;; rdi - pixels
+;; rsi - texture
+;; rdx - renderer
 _window_present:
     sub rsp, 24               ; allocate space for 3 pointers (8 bytes each)       
     mov qword [rbp - 8],  rdi ; assign pixels to the first local variable
